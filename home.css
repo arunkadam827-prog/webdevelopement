@@ -1,0 +1,65 @@
+.blog {
+    background-color: #010101;
+
+}
+
+.blog .items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    padding: 0rem 1rem;
+}
+
+.blog .items .card {
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.blog .items .card::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: linear-gradient(to top, #010101, transparent);
+    z-index: 0;
+}
+
+.blog .items .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 1s;
+}
+
+.blog .items .card:hover img {
+    transform: scale(1.1);
+
+}
+
+.blog .items .card .content-card {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transform: translateY(20px);
+    transition: all 1s;
+
+
+}
+
+.blog .items .card:hover .content-card {
+    position: absolute;
+    transform: translateY(-30px);
+
+}
+
+.blog .items .card p {
+    padding: 1rem 1rem;
+    font-size: 16px;
+    color: #fff;
+}
